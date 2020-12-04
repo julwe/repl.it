@@ -1,0 +1,66 @@
+void removeLeafLol(struct Leaf* start, int n){
+  if(start != NULL){
+    printf("start != NULL");
+    if(start->left != NULL && start->left->n == n){
+      printf("Linker Teilbaum hat geuchtes Element\n");
+      if(start->left->left == NULL && start->left->right == NULL){ // keiner existiert DONE!
+        printf("Linker Teilbaum hat keine weiteren Teilbaeume mehr\n");
+        free(start->left);
+        start->left = NULL;
+      } else if(start->left->left == NULL && start->left->right != NULL){ // nur rechts existiert
+        printf("Linker Teilbaum hat nur rechts einen Teilbaum\n");
+        struct Leaf* toRemove = (start->left);
+        struct Leaf* toAppend = start->left->right;
+        free(start->left);
+        start->left = toAppend;
+      } else if(start->left->left != NULL && start->left->right == NULL){ // nur links existiert
+        printf("Linker Teilbaum hat nur links einen Teilbaum\n");
+        struct Leaf* toRemove = (start->left);
+        struct Leaf* toAppend = (start->left->left);
+        free(toRemove);
+        start->left = toAppend;
+      } else {
+        printf("Nope.");
+      }
+    } else if(start->right != NULL && start->right->n == n){ 
+    
+    } else {
+      removeLeaf(start->left, n);
+      removeLeaf(start->right, n);
+    }
+  }
+}
+
+
+void removeLeafLolLol(struct Leaf* start, int n){
+  if(start != NULL){
+    printf("start != NULL");
+    if(start->left != NULL && start->left->n == n){
+      printf("Linker Teilbaum hat geuchtes Element\n");
+      if(start->left->left == NULL && start->left->right == NULL){ // keiner existiert DONE!
+        printf("Linker Teilbaum hat keine weiteren Teilbaeume mehr\n");
+        free(start->left);
+        start->left = NULL;
+      } else if(start->left->left == NULL && start->left->right != NULL){ // nur rechts existiert
+        printf("Linker Teilbaum hat nur rechts einen Teilbaum\n");
+        struct Leaf* toRemove = (start->left);
+        struct Leaf* toAppend = start->left->right;
+        free(start->left);
+        start->left = toAppend;
+      } else if(start->left->left != NULL && start->left->right == NULL){ // nur links existiert
+        printf("Linker Teilbaum hat nur links einen Teilbaum\n");
+        struct Leaf* toRemove = (start->left);
+        struct Leaf* toAppend = (start->left->left);
+        free(toRemove);
+        start->left = toAppend;
+      } else {
+        printf("Nope.");
+      }
+    } else if(start->right != NULL && start->right->n == n){ 
+    
+    } else {
+      removeLeaf(start->left, n);
+      removeLeaf(start->right, n);
+    }
+  }
+}

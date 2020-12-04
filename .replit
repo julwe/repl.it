@@ -1,0 +1,7 @@
+language = "c"
+# 1
+# run = "clang-7 -pthread -lm -o main 01_LinkedList/LinkedList.c && ./main"
+# 2.1
+run = "clang-7 -pthread -lm -o main 02_BinaryTree/BinaryTree.c && ./main"
+# 2.2
+# run = "clang-7 -pthread -lm -o main 02_BinaryTree/BinaryTreee.c && ./main"
